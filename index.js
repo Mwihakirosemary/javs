@@ -38,6 +38,24 @@ let selectedColos = ['red','blue'];
 selectedColos[2] = 10;
 console.log(selectedColos.length);
 
+let b = ["Mango","Apple"];
+b.push("Orange")        // adds to the end of the array
+b.unshift("Grapes")     //adds to the start of the array
+b.pop()                 //remove the last
+b.shift()               //remove the first
+
+let c = new Array("Banana","Kiwi");
+console.log(b);
+
+// map()  iterate through all the elements (callback function - function taken as an argument) in the array
+// backtics
+let d = c.map(item => 'I love ${item}');
+let e = c.map(function(item){
+    return 'I love ${item}'
+})
+console.log(d);
+console.log(e);
+
 //FUNCTIONS
 // A set of statement that either performs a task or calc a value
 // when declaring a funct no need of a ; bcz it's not a var(function declaration)
@@ -77,3 +95,30 @@ console.log(typeof(today));
 
 var trees = ["Rosewood","Redwood","Maple","Oak","Cedar"];
 console.log(11 in trees)
+
+// Object Oriented Programming
+// concepts : 1.Encapsulation 2. Abstraction 3. Inheritance 4. Polymorphism
+// 1.combining related var and functions into a unit - object (var = property-color,make,model, function = method -start(),stop())
+
+let baseSalary = 30_000;   // procedural
+let overtime = 10;
+let rate = 20;
+
+function getWage(baseSalary,overtime,rate){
+    return baseSalary + (overtime * rate);
+}
+
+let employee = {          // oop
+    baseSalary: 30_00,
+    overtime: 10,
+    rate: 20,
+    getWage: function(){    // no parameters coz they are used as properties
+        return this.baseSalary + (this.overtime * this.rate);
+    }
+
+};
+employee.getWage();
+
+// 2.simpler interface & reduce impact of change
+// 3.eliminate redundant code
+// 4.poly - many,morphism - form
